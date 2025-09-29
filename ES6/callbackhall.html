@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getdata(dataid){
+            setTimeout(() => {
+                console.log("data received",dataid);
+            }, 2000);
+        }
+        getdata(1);
+        getdata(2);
+        getdata(3);
+        getdata(4);
+
+        function getData(dataID, getNextData) {
+            setTimeout(() => {
+            console.log("Data:", dataID);
+            if(getNextData) {
+                getNextData();
+            }
+        }, 1500);
+        }
+
+
+        getData(1,() => {
+            getData(2,() => {
+                getData(3,() => {
+                    getData(4,() => {
+                        getData(5,() => {
+                            console.log('All Data Received');
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
