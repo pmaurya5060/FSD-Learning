@@ -1,12 +1,11 @@
-import { useState } from 'react'
 import Book from './Book'
-
+import Navbar from './Navbar'
 function App() {
 
   return (
     <>
-      <Book />
-     
+      <Navbar/>
+      <Book/>
     </>
   )
 }
